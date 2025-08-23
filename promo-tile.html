@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table to Markdown - Promo Tile</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .promo-tile {
+        width: 440px;
+        height: 280px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+      }
+
+      .background-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background-image: radial-gradient(
+            circle at 25% 25%,
+            white 2px,
+            transparent 2px
+          ),
+          radial-gradient(circle at 75% 75%, white 2px, transparent 2px);
+        background-size: 40px 40px;
+      }
+
+      .content {
+        text-align: center;
+        z-index: 2;
+        color: white;
+      }
+
+      .icon {
+        width: 64px;
+        height: 64px;
+        background: white;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px auto;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      }
+
+      .icon svg {
+        width: 40px;
+        height: 40px;
+        fill: #667eea;
+      }
+
+      .title {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .subtitle {
+        font-size: 16px;
+        font-weight: 400;
+        opacity: 0.9;
+        margin-bottom: 20px;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      }
+
+      .features {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .feature {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 12px;
+        opacity: 0.9;
+      }
+
+      .feature-icon {
+        width: 24px;
+        height: 24px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4px;
+        font-size: 14px;
+      }
+
+      .corner-accent {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        width: 80px;
+        height: 80px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+      }
+
+      .corner-accent-2 {
+        position: absolute;
+        bottom: -30px;
+        left: -30px;
+        width: 100px;
+        height: 100px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="promo-tile">
+      <div class="background-pattern"></div>
+      <div class="corner-accent"></div>
+      <div class="corner-accent-2"></div>
+
+      <div class="content">
+        <div class="icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h10v2H7v-2z"
+            />
+          </svg>
+        </div>
+
+        <div class="title">Table to Markdown</div>
+        <div class="subtitle">Convert HTML tables instantly</div>
+
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon">🖱️</div>
+            <div>One Click</div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">👆</div>
+            <div>Hover to Copy</div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🔓</div>
+            <div>No Permission Need</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
