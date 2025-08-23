@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="16" fill="#4a90e2"/>
+  <g fill="white" stroke="white" stroke-width="2">
+    <!-- Table structure -->
+    <rect x="20" y="30" width="88" height="68" fill="none" stroke-width="3"/>
+    <!-- Horizontal lines -->
+    <line x1="20" y1="50" x2="108" y2="50" stroke-width="2"/>
+    <line x1="20" y1="70" x2="108" y2="70" stroke-width="2"/>
+    <!-- Vertical lines -->
+    <line x1="50" y1="30" x2="50" y2="98" stroke-width="2"/>
+    <line x1="78" y1="30" x2="78" y2="98" stroke-width="2"/>
+    <!-- M for Markdown -->
+    <text x="64" y="85" font-family="Arial, sans-serif" font-size="36" font-weight="bold" text-anchor="middle" fill="white">M</text>
+  </g>
+</svg>

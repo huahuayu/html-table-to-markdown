@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Table to Markdown - Test Page</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        background: #f7f9fc;
+      }
+      h1 {
+        color: #2d3748;
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 10px;
+      }
+      h2 {
+        color: #4a5568;
+        margin-top: 40px;
+      }
+      .table-container {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 10px 0;
+      }
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #e2e8f0;
+      }
+      th {
+        background: #f7fafc;
+        font-weight: 600;
+        color: #2d3748;
+      }
+      tr:hover {
+        background: #f7fafc;
+      }
+      .description {
+        color: #718096;
+        margin: 10px 0;
+        font-size: 14px;
+      }
+      .code-block {
+        background: #2d3748;
+        color: #e2e8f0;
+        padding: 15px;
+        border-radius: 6px;
+        font-family: "Courier New", monospace;
+        font-size: 14px;
+        overflow-x: auto;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🎯 HTML Table to Markdown Extension - Test Page</h1>
+
+    <p class="description">
+      This page contains various HTML tables for testing the extension. Hover
+      over any table to see the copy button appear!
+    </p>
+
+    <h2>1. Simple Table with Headers</h2>
+    <div class="table-container">
+      <p class="description">
+        Basic table with header row using &lt;th&gt; elements:
+      </p>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>City</th>
+          <th>Occupation</th>
+        </tr>
+        <tr>
+          <td>Alice Johnson</td>
+          <td>28</td>
+          <td>New York</td>
+          <td>Software Engineer</td>
+        </tr>
+        <tr>
+          <td>Bob Smith</td>
+          <td>35</td>
+          <td>San Francisco</td>
+          <td>Product Manager</td>
+        </tr>
+        <tr>
+          <td>Carol White</td>
+          <td>42</td>
+          <td>Chicago</td>
+          <td>UX Designer</td>
+        </tr>
+      </table>
+    </div>
+
+    <h2>2. Table with THEAD and TBODY</h2>
+    <div class="table-container">
+      <p class="description">Properly structured table with semantic HTML:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Laptop Pro</td>
+            <td>$1,299</td>
+            <td>15</td>
+            <td>Electronics</td>
+          </tr>
+          <tr>
+            <td>Wireless Mouse</td>
+            <td>$29.99</td>
+            <td>150</td>
+            <td>Accessories</td>
+          </tr>
+          <tr>
+            <td>USB-C Hub</td>
+            <td>$49.99</td>
+            <td>75</td>
+            <td>Accessories</td>
+          </tr>
+          <tr>
+            <td>4K Monitor</td>
+            <td>$399</td>
+            <td>8</td>
+            <td>Electronics</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>3. Table without Headers</h2>
+    <div class="table-container">
+      <p class="description">
+        Table using only &lt;td&gt; elements (no headers):
+      </p>
+      <table>
+        <tr>
+          <td>Monday</td>
+          <td>9:00 AM</td>
+          <td>Team Meeting</td>
+        </tr>
+        <tr>
+          <td>Tuesday</td>
+          <td>2:00 PM</td>
+          <td>Client Presentation</td>
+        </tr>
+        <tr>
+          <td>Wednesday</td>
+          <td>10:00 AM</td>
+          <td>Code Review</td>
+        </tr>
+        <tr>
+          <td>Friday</td>
+          <td>3:00 PM</td>
+          <td>Sprint Planning</td>
+        </tr>
+      </table>
+    </div>
+
+    <h2>4. Table with Special Characters</h2>
+    <div class="table-container">
+      <p class="description">
+        Testing pipe character escaping and special formatting:
+      </p>
+      <table>
+        <tr>
+          <th>Command</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+        <tr>
+          <td>ls | grep txt</td>
+          <td>List text files</td>
+          <td>file1.txt | file2.txt</td>
+        </tr>
+        <tr>
+          <td>echo "Hello"</td>
+          <td>Print message</td>
+          <td>Output: Hello</td>
+        </tr>
+        <tr>
+          <td>cd ~/Documents</td>
+          <td>Change directory</td>
+          <td>/Users/name/Documents</td>
+        </tr>
+      </table>
+    </div>
+
+    <h2>5. Large Data Table</h2>
+    <div class="table-container">
+      <p class="description">Performance test with more rows:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Joined</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>john_doe</td>
+            <td>john@example.com</td>
+            <td>Active</td>
+            <td>2023-01-15</td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>jane_smith</td>
+            <td>jane@example.com</td>
+            <td>Active</td>
+            <td>2023-02-20</td>
+          </tr>
+          <tr>
+            <td>003</td>
+            <td>mike_wilson</td>
+            <td>mike@example.com</td>
+            <td>Inactive</td>
+            <td>2023-03-10</td>
+          </tr>
+          <tr>
+            <td>004</td>
+            <td>sarah_jones</td>
+            <td>sarah@example.com</td>
+            <td>Active</td>
+            <td>2023-04-05</td>
+          </tr>
+          <tr>
+            <td>005</td>
+            <td>tom_brown</td>
+            <td>tom@example.com</td>
+            <td>Pending</td>
+            <td>2023-05-12</td>
+          </tr>
+          <tr>
+            <td>006</td>
+            <td>lisa_davis</td>
+            <td>lisa@example.com</td>
+            <td>Active</td>
+            <td>2023-06-18</td>
+          </tr>
+          <tr>
+            <td>007</td>
+            <td>mark_taylor</td>
+            <td>mark@example.com</td>
+            <td>Active</td>
+            <td>2023-07-22</td>
+          </tr>
+          <tr>
+            <td>008</td>
+            <td>amy_white</td>
+            <td>amy@example.com</td>
+            <td>Active</td>
+            <td>2023-08-30</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>6. Dynamically Added Table</h2>
+    <div class="table-container">
+      <p class="description">
+        This table will be added after 3 seconds to test dynamic content
+        support:
+      </p>
+      <div id="dynamic-table-container">
+        <p style="color: #718096; font-style: italic">
+          Table will appear here in 3 seconds...
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // Add a table dynamically after 3 seconds
+      setTimeout(() => {
+        const container = document.getElementById("dynamic-table-container");
+        container.innerHTML = `
+                <table>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Status</th>
+                        <th>Priority</th>
+                    </tr>
+                    <tr>
+                        <td>Auto-detection</td>
+                        <td>✅ Complete</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>Copy to Clipboard</td>
+                        <td>✅ Complete</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>Dark Mode</td>
+                        <td>✅ Complete</td>
+                        <td>Medium</td>
+                    </tr>
+                    <tr>
+                        <td>Dynamic Tables</td>
+                        <td>✅ Complete</td>
+                        <td>Medium</td>
+                    </tr>
+                </table>
+            `;
+      }, 3000);
+    </script>
+
+    <div
+      style="margin-top: 60px; padding-top: 30px; border-top: 1px solid #e2e8f0"
+    >
+      <h2>📝 Expected Markdown Output Examples</h2>
+
+      <p class="description">
+        Here's what the first table should look like when copied:
+      </p>
+      <div class="code-block">
+        | Name | Age | City | Occupation | | --- | --- | --- | --- | | Alice
+        Johnson | 28 | New York | Software Engineer | | Bob Smith | 35 | San
+        Francisco | Product Manager | | Carol White | 42 | Chicago | UX Designer
+        |
+      </div>
+
+      <p class="description">
+        The table with special characters should escape pipes properly:
+      </p>
+      <div class="code-block">
+        | Command | Description | Example | | --- | --- | --- | | ls \| grep txt
+        | List text files | file1.txt \| file2.txt | | echo "Hello" | Print
+        message | Output: Hello | | cd ~/Documents | Change directory |
+        /Users/name/Documents |
+      </div>
+    </div>
+  </body>
+</html>

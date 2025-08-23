@@ -1,0 +1,34 @@
+{
+  "name": "table-to-markdown",
+  "version": "1.0.0",
+  "description": "Chrome extension to convert HTML tables to Markdown format with one-click copy",
+  "main": "content.js",
+  "scripts": {
+    "build": "zip -r table-to-markdown.zip . -x '*.git*' -x 'node_modules/*' -x '*.md' -x 'package*.json' -x '.DS_Store' -x '*.zip' -x '*debug*' -x 'generate_icons.html'",
+    "clean": "rm -f table-to-markdown.zip",
+    "test": "echo \"No tests specified yet\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huahuayu/html-table-to-markdown.git"
+  },
+  "keywords": [
+    "chrome-extension",
+    "markdown",
+    "table",
+    "converter",
+    "html-to-markdown",
+    "productivity",
+    "developer-tools"
+  ],
+  "author": "Shiming",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/huahuayu/html-table-to-markdown/issues"
+  },
+  "homepage": "https://github.com/huahuayu/html-table-to-markdown#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "private": true
+}

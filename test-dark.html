@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Table to Markdown - Dark Mode Test</title>
+    <style>
+      :root {
+        --bg-primary: #0d1117;
+        --bg-secondary: #161b22;
+        --bg-tertiary: #21262d;
+        --text-primary: #c9d1d9;
+        --text-secondary: #8b949e;
+        --text-accent: #58a6ff;
+        --border-color: #30363d;
+        --border-subtle: #21262d;
+        --shadow: 0 8px 24px rgba(1, 4, 9, 0.5);
+        --hover-bg: #30363d;
+        --success: #3fb950;
+        --warning: #d29922;
+        --error: #f85149;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+          Helvetica, Arial, sans-serif;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 1.6;
+        padding: 40px 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        color: var(--text-primary);
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .subtitle {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        margin-bottom: 32px;
+      }
+
+      h2 {
+        color: var(--text-primary);
+        font-size: 1.5rem;
+        margin: 48px 0 24px;
+      }
+
+      .table-container {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 24px;
+        margin: 24px 0;
+        box-shadow: var(--shadow);
+      }
+
+      .description {
+        color: var(--text-secondary);
+        margin-bottom: 16px;
+        font-size: 0.95rem;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--bg-tertiary);
+      }
+
+      th,
+      td {
+        padding: 12px 16px;
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+      }
+
+      th:last-child,
+      td:last-child {
+        border-right: none;
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      th {
+        background: var(--bg-secondary);
+        color: var(--text-primary);
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      td {
+        color: var(--text-primary);
+        background: var(--bg-tertiary);
+      }
+
+      tr:hover td {
+        background: var(--hover-bg);
+      }
+
+      /* Code blocks */
+      .code-block {
+        background: #090d13;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 20px;
+        margin: 16px 0;
+        overflow-x: auto;
+      }
+
+      .code-block pre {
+        color: var(--text-primary);
+        font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono",
+          monospace;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      /* Status badges */
+      .badge {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 12px;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+
+      .badge.success {
+        background: rgba(63, 185, 80, 0.15);
+        color: var(--success);
+        border: 1px solid rgba(63, 185, 80, 0.3);
+      }
+
+      .badge.warning {
+        background: rgba(210, 153, 34, 0.15);
+        color: var(--warning);
+        border: 1px solid rgba(210, 153, 34, 0.3);
+      }
+
+      .badge.error {
+        background: rgba(248, 81, 73, 0.15);
+        color: var(--error);
+        border: 1px solid rgba(248, 81, 73, 0.3);
+      }
+
+      .badge.info {
+        background: rgba(88, 166, 255, 0.15);
+        color: var(--text-accent);
+        border: 1px solid rgba(88, 166, 255, 0.3);
+      }
+
+      /* Links */
+      a {
+        color: var(--text-accent);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* Footer */
+      .footer {
+        margin-top: 80px;
+        padding-top: 32px;
+        border-top: 1px solid var(--border-color);
+        color: var(--text-secondary);
+        text-align: center;
+      }
+
+      /* Special GitHub-like styling */
+      .github-table th {
+        background: linear-gradient(to bottom, #21262d, #161b22);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        .table-container {
+          padding: 16px;
+          overflow-x: auto;
+        }
+
+        table {
+          min-width: 500px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🌙 Dark Mode Test - Table to Markdown Extension</h1>
+      <p class="subtitle">
+        Testing the extension with various table styles in dark mode. The copy
+        button should adapt to the dark theme automatically.
+      </p>
+
+      <h2>1. GitHub-Style Repository Table</h2>
+      <div class="table-container">
+        <p class="description">Repository information with status badges</p>
+        <table class="github-table">
+          <thead>
+            <tr>
+              <th>Repository</th>
+              <th>Stars</th>
+              <th>Language</th>
+              <th>Status</th>
+              <th>Last Updated</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="#">facebook/react</a></td>
+              <td>⭐ 215k</td>
+              <td>JavaScript</td>
+              <td><span class="badge success">Active</span></td>
+              <td>2 hours ago</td>
+            </tr>
+            <tr>
+              <td><a href="#">microsoft/vscode</a></td>
+              <td>⭐ 155k</td>
+              <td>TypeScript</td>
+              <td><span class="badge success">Active</span></td>
+              <td>5 hours ago</td>
+            </tr>
+            <tr>
+              <td><a href="#">torvalds/linux</a></td>
+              <td>⭐ 162k</td>
+              <td>C</td>
+              <td><span class="badge success">Active</span></td>
+              <td>1 day ago</td>
+            </tr>
+            <tr>
+              <td><a href="#">rust-lang/rust</a></td>
+              <td>⭐ 87k</td>
+              <td>Rust</td>
+              <td><span class="badge success">Active</span></td>
+              <td>3 hours ago</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>2. API Response Status Table</h2>
+      <div class="table-container">
+        <p class="description">HTTP status codes and their meanings</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Status Code</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>200</code></td>
+              <td>OK</td>
+              <td><span class="badge success">Success</span></td>
+              <td>The request succeeded</td>
+            </tr>
+            <tr>
+              <td><code>201</code></td>
+              <td>Created</td>
+              <td><span class="badge success">Success</span></td>
+              <td>Resource successfully created</td>
+            </tr>
+            <tr>
+              <td><code>401</code></td>
+              <td>Unauthorized</td>
+              <td><span class="badge warning">Client Error</span></td>
+              <td>Authentication required</td>
+            </tr>
+            <tr>
+              <td><code>404</code></td>
+              <td>Not Found</td>
+              <td><span class="badge warning">Client Error</span></td>
+              <td>Resource not found</td>
+            </tr>
+            <tr>
+              <td><code>500</code></td>
+              <td>Internal Server Error</td>
+              <td><span class="badge error">Server Error</span></td>
+              <td>Server encountered an error</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>3. Project Dependencies Table</h2>
+      <div class="table-container">
+        <p class="description">NPM package dependencies with versions</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Package</th>
+              <th>Version</th>
+              <th>Type</th>
+              <th>License</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>@types/chrome</code></td>
+              <td>^0.0.253</td>
+              <td><span class="badge info">Dev</span></td>
+              <td>MIT</td>
+            </tr>
+            <tr>
+              <td><code>webpack</code></td>
+              <td>^5.89.0</td>
+              <td><span class="badge info">Dev</span></td>
+              <td>MIT</td>
+            </tr>
+            <tr>
+              <td><code>typescript</code></td>
+              <td>^5.3.3</td>
+              <td><span class="badge info">Dev</span></td>
+              <td>Apache-2.0</td>
+            </tr>
+            <tr>
+              <td><code>prettier</code></td>
+              <td>^3.1.1</td>
+              <td><span class="badge info">Dev</span></td>
+              <td>MIT</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>4. Performance Metrics Table</h2>
+      <div class="table-container">
+        <p class="description">Website performance metrics</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Value</th>
+              <th>Score</th>
+              <th>Impact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>First Contentful Paint</td>
+              <td>0.8s</td>
+              <td><span class="badge success">98</span></td>
+              <td>Low</td>
+            </tr>
+            <tr>
+              <td>Largest Contentful Paint</td>
+              <td>1.2s</td>
+              <td><span class="badge success">95</span></td>
+              <td>Low</td>
+            </tr>
+            <tr>
+              <td>Total Blocking Time</td>
+              <td>150ms</td>
+              <td><span class="badge warning">75</span></td>
+              <td>Medium</td>
+            </tr>
+            <tr>
+              <td>Cumulative Layout Shift</td>
+              <td>0.003</td>
+              <td><span class="badge success">100</span></td>
+              <td>Low</td>
+            </tr>
+            <tr>
+              <td>Speed Index</td>
+              <td>1.5s</td>
+              <td><span class="badge success">92</span></td>
+              <td>Low</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>5. Cryptocurrency Prices (Complex Table)</h2>
+      <div class="table-container">
+        <p class="description">Real-time cryptocurrency market data</p>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Symbol</th>
+              <th>Price</th>
+              <th>24h %</th>
+              <th>Market Cap</th>
+              <th>Volume (24h)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Bitcoin</td>
+              <td><code>BTC</code></td>
+              <td>$43,521.88</td>
+              <td><span class="badge success">+2.34%</span></td>
+              <td>$851.2B</td>
+              <td>$23.5B</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Ethereum</td>
+              <td><code>ETH</code></td>
+              <td>$2,284.15</td>
+              <td><span class="badge error">-0.87%</span></td>
+              <td>$274.5B</td>
+              <td>$11.2B</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Tether</td>
+              <td><code>USDT</code></td>
+              <td>$1.00</td>
+              <td><span class="badge success">+0.01%</span></td>
+              <td>$91.8B</td>
+              <td>$42.1B</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>BNB</td>
+              <td><code>BNB</code></td>
+              <td>$312.45</td>
+              <td><span class="badge success">+1.56%</span></td>
+              <td>$48.1B</td>
+              <td>$892M</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Solana</td>
+              <td><code>SOL</code></td>
+              <td>$98.76</td>
+              <td><span class="badge success">+5.43%</span></td>
+              <td>$42.7B</td>
+              <td>$2.1B</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Expected Markdown Output</h2>
+      <div class="code-block">
+        <pre>
+| Repository | Stars | Language | Status | Last Updated |
+| --- | --- | --- | --- | --- |
+| facebook/react | ⭐ 215k | JavaScript | Active | 2 hours ago |
+| microsoft/vscode | ⭐ 155k | TypeScript | Active | 5 hours ago |
+| torvalds/linux | ⭐ 162k | C | Active | 1 day ago |
+| rust-lang/rust | ⭐ 87k | Rust | Active | 3 hours ago |</pre
+        >
+      </div>
+
+      <div class="footer">
+        <p>🌙 Dark Mode Test Page for Table to Markdown Extension</p>
+        <p>The copy button should automatically adapt to the dark theme</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build Files
+*.zip
+*.crx
+*.pem
+dist/
+build/
+
+# Debug Files
+*debug*
+*.log
+
+# Temporary Files
+*.tmp
+*.temp
+.cache/
+
+# Private Keys
+*.key
+*.pem
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Test Coverage
+coverage/
+*.lcov
+
+# Documentation Build
+docs/_build/
+
+# Mac specific
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux specific
+.directory
+.Trash-*
