@@ -1,6 +1,6 @@
 /**
  * HTML Table to Markdown Converter - Chrome Extension
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Shiming
  * License: MIT
  * 

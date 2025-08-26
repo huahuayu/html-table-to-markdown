@@ -1,4 +1,4 @@
-# Table to Markdown - Chrome Extension
+# HTML Table to Markdown - Chrome Extension
 
 <div align="center">
   <img src="icons/icon.svg" alt="Table to Markdown Icon" width="128" height="128">
@@ -53,10 +53,10 @@
 
 ## 🎯 Usage
 
-1. **Navigate** to any webpage containing HTML tables
-2. **Hover** over a table - a copy button will appear in the top-right corner
-3. **Click** the copy button to copy the table as Markdown
-4. **Paste** anywhere that supports Markdown (GitHub, Notion, Obsidian, etc.)
+1. Navigate to any webpage with tables
+2. Hover over a table
+3. Click the copy button that appears
+4. Paste the Markdown table anywhere!
 
 ## 📄 License
 
