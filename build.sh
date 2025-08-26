@@ -12,7 +12,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
 # Extension name
-EXTENSION_NAME="table-to-markdown"
+EXTENSION_NAME="html-table-to-markdown"
 BUILD_DIR="build"
 ZIP_NAME="${EXTENSION_NAME}.zip"
 
@@ -41,11 +41,14 @@ echo "📋 Copying required files..."
 cp manifest.json $BUILD_DIR/
 cp content.js $BUILD_DIR/
 cp styles.css $BUILD_DIR/
+cp popup.html $BUILD_DIR/
+cp popup.js $BUILD_DIR/
+cp popup.css $BUILD_DIR/
 cp -r icons/*.png $BUILD_DIR/icons/ 2>/dev/null || echo "Icons not found, skipping..."
 
 # Verify required files
 echo "✅ Verifying build..."
-REQUIRED_FILES=("manifest.json" "content.js" "styles.css")
+REQUIRED_FILES=("manifest.json" "content.js" "styles.css" "popup.html" "popup.js" "popup.css")
 for file in "${REQUIRED_FILES[@]}"; do
     if [ ! -f "$BUILD_DIR/$file" ]; then
         echo -e "${RED}❌ Error: Required file $file is missing!${NC}"

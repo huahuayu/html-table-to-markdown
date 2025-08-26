@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "HTML Table to Markdown - Copy as Markdown",
   "short_name": "Table2MD",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Copy HTML tables as Markdown. Simply hover over any table and click to copy as Markdown.",
   "author": "Shiming Liu",
   "homepage_url": "https://github.com/huahuayu/html-table-to-markdown",
