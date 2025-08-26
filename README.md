@@ -3,7 +3,7 @@
 <div align="center">
   <img src="icons/icon.svg" alt="Table to Markdown Icon" width="128" height="128">
   
-  [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/YOUR_EXTENSION_ID)](https://chrome.google.com/webstore/detail/YOUR_EXTENSION_ID)
+  [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/mbjnhbnmmciknjjoojnkloipgejjogbd)](https://chrome.google.com/webstore/detail/mbjnhbnmmciknjjoojnkloipgejjogbd)
   [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
   [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 </div>

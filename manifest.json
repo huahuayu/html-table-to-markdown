@@ -1,13 +1,13 @@
 {
   "manifest_version": 3,
-  "name": "Table to Markdown - Copy as Markdown",
+  "name": "HTML Table to Markdown - Copy as Markdown",
   "short_name": "Table2MD",
   "version": "1.0.0",
-  "description": "Convert HTML tables to Markdown format instantly. Simply hover over any table and click to copy as Markdown.",
-  "author": "Shiming",
+  "description": "Copy HTML tables as Markdown. Simply hover over any table and click to copy as Markdown.",
+  "author": "Shiming Liu",
   "homepage_url": "https://github.com/huahuayu/html-table-to-markdown",
 
-  "permissions": ["clipboardWrite"],
+  "permissions": ["clipboardWrite", "tabs"],
 
   "host_permissions": [],
 
@@ -35,6 +35,7 @@
       "48": "icons/icon-48.png",
       "128": "icons/icon-128.png"
     },
-    "default_title": "Table to Markdown"
+    "default_title": "HTML Table to Markdown",
+    "default_popup": "popup.html"
   }
 }
