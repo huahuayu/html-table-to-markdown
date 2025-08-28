@@ -1,8 +1,9 @@
 /**
  * Table to Markdown Extension Popup Script
- * Minimal version - no dynamic functionality needed for simple popup
+ * Simple version - no tabs permission needed
  */
 
 document.addEventListener('DOMContentLoaded', function () {
-    // No initialization needed for simple popup
+    // Simple popup initialization
+    console.log('HTML Table to Markdown popup loaded');
 });
