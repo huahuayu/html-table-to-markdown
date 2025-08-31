@@ -7,7 +7,7 @@
   "author": "Shiming Liu",
   "homepage_url": "https://github.com/huahuayu/html-table-to-markdown",
 
-  "permissions": ["clipboardWrite", "tabs"],
+  "permissions": ["clipboardWrite"],
 
   "host_permissions": [],
 

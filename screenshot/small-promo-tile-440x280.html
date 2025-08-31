@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=440, height=280" />
+    <title>Small Promo Tile Alt - HTML Table to Markdown</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 440px;
+        height: 280px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background: linear-gradient(
+          120deg,
+          #4a90e2 0%,
+          #5ca0f2 50%,
+          #74b9ff 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* Grid pattern background */
+      .grid-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0.1) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 30px 30px;
+        opacity: 0.3;
+      }
+
+      .content {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        z-index: 2;
+      }
+
+      .left-side {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .logo-container {
+        width: 90px;
+        height: 90px;
+        background: white;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        transform: rotate(-5deg);
+        animation: wobble 4s ease-in-out infinite;
+      }
+
+      .logo-svg {
+        width: 80%;
+        height: 80%;
+      }
+
+      .text-content {
+        color: white;
+        max-width: 260px;
+      }
+
+      .main-text {
+        font-size: 32px;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 10px;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      .sub-text {
+        font-size: 18px;
+        font-weight: 500;
+        opacity: 0.95;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Floating table icons */
+      .float-table {
+        position: absolute;
+        width: 60px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 6px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 2px;
+        padding: 4px;
+      }
+
+      .float-table .cell {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 2px;
+      }
+
+      .float-table-1 {
+        top: 30px;
+        right: 40px;
+        animation: float-1 6s ease-in-out infinite;
+      }
+
+      .float-table-2 {
+        bottom: 40px;
+        left: 30px;
+        animation: float-2 8s ease-in-out infinite;
+        width: 50px;
+        height: 35px;
+      }
+
+      .float-table-3 {
+        top: 50%;
+        right: 60px;
+        animation: float-3 7s ease-in-out infinite;
+        width: 45px;
+        height: 30px;
+      }
+
+      /* Copy icon */
+      .copy-icon {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: pulse-copy 2s ease-in-out infinite;
+      }
+
+      .copy-icon::before {
+        content: "📋";
+        font-size: 20px;
+        filter: grayscale(1) brightness(2);
+      }
+
+      @keyframes wobble {
+        0%,
+        100% {
+          transform: rotate(-5deg) scale(1);
+        }
+        25% {
+          transform: rotate(-3deg) scale(1.02);
+        }
+        50% {
+          transform: rotate(-7deg) scale(1);
+        }
+        75% {
+          transform: rotate(-4deg) scale(1.02);
+        }
+      }
+
+      @keyframes float-1 {
+        0%,
+        100% {
+          transform: translateY(0) translateX(0);
+        }
+        50% {
+          transform: translateY(-15px) translateX(-10px);
+        }
+      }
+
+      @keyframes float-2 {
+        0%,
+        100% {
+          transform: translateY(0) translateX(0);
+        }
+        50% {
+          transform: translateY(-20px) translateX(15px);
+        }
+      }
+
+      @keyframes float-3 {
+        0%,
+        100% {
+          transform: translateY(0) scale(1);
+        }
+        50% {
+          transform: translateY(-10px) scale(1.1);
+        }
+      }
+
+      @keyframes pulse-copy {
+        0%,
+        100% {
+          transform: scale(1);
+          background: rgba(255, 255, 255, 0.2);
+        }
+        50% {
+          transform: scale(1.1);
+          background: rgba(255, 255, 255, 0.3);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-bg"></div>
+
+    <!-- Floating table elements -->
+    <div class="float-table float-table-1">
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+    </div>
+
+    <div class="float-table float-table-2">
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+    </div>
+
+    <div class="float-table float-table-3">
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+    </div>
+
+    <div class="copy-icon"></div>
+
+    <div class="content">
+      <div class="logo-container">
+        <svg
+          class="logo-svg"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 128 128"
+        >
+          <rect width="128" height="128" rx="16" fill="#4a90e2" />
+          <g fill="white" stroke="white" stroke-width="2">
+            <!-- Table structure -->
+            <rect
+              x="20"
+              y="30"
+              width="88"
+              height="68"
+              fill="none"
+              stroke-width="3"
+            />
+            <!-- Horizontal lines -->
+            <line x1="20" y1="50" x2="108" y2="50" stroke-width="2" />
+            <line x1="20" y1="70" x2="108" y2="70" stroke-width="2" />
+            <!-- Vertical lines -->
+            <line x1="50" y1="30" x2="50" y2="98" stroke-width="2" />
+            <line x1="78" y1="30" x2="78" y2="98" stroke-width="2" />
+            <!-- M for Markdown -->
+            <text
+              x="64"
+              y="85"
+              font-family="Arial, sans-serif"
+              font-size="36"
+              font-weight="bold"
+              text-anchor="middle"
+              fill="white"
+            >
+              M
+            </text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="text-content">
+        <h1 class="main-text">Hover Any Table<br />Copy as Markdown</h1>
+        <p class="sub-text">One-click conversion, zero hassle</p>
+      </div>
+    </div>
+  </body>
+</html>
