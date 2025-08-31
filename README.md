@@ -59,6 +59,11 @@
 3. Click the copy button that appears
 4. Paste the Markdown table anywhere!
 
+## 🚀 Found it useful? Leave a review!
+
+- ⭐ **Rating it 5 stars** on the [Chrome Web Store](https://chrome.google.com/webstore/detail/mbjnhbnmmciknjjoojnkloipgejjogbd)
+- 🚀 **Upvoting on [Product Hunt](https://www.producthunt.com/products/html-table-to-markdown-chrome-extension?launch=html-table-to-markdown-chrome-extension)**
+
 ## 📄 License
 
 This project is licensed under the MIT License
