@@ -5,6 +5,20 @@ All notable changes to the Table to Markdown Chrome Extension will be documented
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] - 2025-01-02
+
+### Added
+
+- Intelligent table filtering to exclude non-data tables from showing copy button
+- Detection and filtering of navigation/pagination tables (e.g., Google search pagination)
+- Recognition of layout tables with `role="presentation"` or `role="none"`
+- Smart heuristics to identify and skip pagination elements
+
+### Improved
+
+- Better user experience by only showing copy button on actual data tables
+- Reduced visual clutter on pages with many layout tables
+
 ## [1.0.2] - 2025-08-29
 
 ### Changed

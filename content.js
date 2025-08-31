@@ -1,6 +1,6 @@
 /**
  * HTML Table to Markdown Converter - Chrome Extension
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Shiming
  * License: MIT
  * 
@@ -276,11 +276,86 @@
     }
 
     /**
+     * Check if a table should be ignored (e.g., navigation, layout tables)
+     * @param {HTMLTableElement} table - The table element to check
+     * @returns {boolean} True if the table should be ignored
+     */
+    function shouldIgnoreTable(table) {
+        // 1. Check if table has role="presentation" or role="none" (used for layout only)
+        const tableRole = table.getAttribute('role');
+        if (tableRole === 'presentation' || tableRole === 'none') {
+            return true;
+        }
+
+        // 2. Check if table is inside a navigation element
+        const navParent = table.closest('[role="navigation"], nav');
+        if (navParent) {
+            return true;
+        }
+
+        // 3. Check for Google-specific pagination patterns
+        // Google uses specific class names for their pagination tables
+        const googlePaginationClasses = ['AaVjTc', 'GKS7s'];
+        if (googlePaginationClasses.some(cls => table.classList.contains(cls))) {
+            return true;
+        }
+
+        // 4. Check if table contains mostly navigation links (heuristic)
+        // Only check single-row tables that look like pagination
+        const rows = table.querySelectorAll('tr');
+        if (rows.length === 1) {
+            const links = table.querySelectorAll('a');
+            const cells = table.querySelectorAll('td, th');
+
+            // Must have at least 4 cells and 80% must be links to be considered pagination
+            if (cells.length >= 4 && links.length >= 4 && (links.length / cells.length) >= 0.8) {
+                // Check if links contain page-related patterns
+                const paginationLinkCount = Array.from(links).filter(link => {
+                    const href = link.getAttribute('href') || '';
+                    const ariaLabel = link.getAttribute('aria-label') || '';
+                    const text = link.textContent || '';
+
+                    // Check for common pagination patterns
+                    return /[?&](start|page|p)=\d+/.test(href) ||
+                        /page\s*\d+/i.test(ariaLabel) ||
+                        /^(\d+|next|prev|previous|下一页|上一页)$/i.test(text.trim());
+                }).length;
+
+                // If most links look like pagination links
+                if (paginationLinkCount >= links.length * 0.6) {
+                    return true;
+                }
+            }
+        }
+
+        // 5. Check if table is completely empty
+        const cells = table.querySelectorAll('td, th');
+        if (cells.length === 0) {
+            return true;
+        }
+
+        // 6. Check if table has no actual content (only whitespace)
+        const visibleText = table.textContent?.trim();
+        if (!visibleText) {
+            return true;
+        }
+
+        // Don't filter out normal tables even if they're small
+        return false;
+    }
+
+    /**
      * Setup event listeners for a table
      * @param {HTMLTableElement} table - The table element
      */
     function setupTableListeners(table) {
         if (table.dataset.tableToMarkdown) return;
+
+        // Skip tables that should be ignored
+        if (shouldIgnoreTable(table)) {
+            table.dataset.tableToMarkdown = 'ignored';
+            return;
+        }
 
         table.dataset.tableToMarkdown = 'true';
         table.addEventListener('mouseenter', () => handleTableHover(table));

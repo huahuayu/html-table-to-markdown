@@ -1,6 +1,6 @@
 {
   "name": "table-to-markdown",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Chrome extension to convert HTML tables to Markdown format with one-click copy",
   "main": "content.js",
   "scripts": {
