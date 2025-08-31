@@ -10,7 +10,7 @@
   
   <br/>
   
-  <a href="https://www.producthunt.com/posts/html-table-to-markdown-chrome-extension?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-html&#0045;table&#0045;to&#0045;markdown&#0045;chrome&#0045;extension" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=766165&theme=light" alt="HTML&#0032;Table&#0032;to&#0032;Markdown&#0032;Chrome&#0032;Extension - Copy&#0032;HTML&#0032;table&#0032;as&#0032;markdown | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+  <a href="https://www.producthunt.com/products/html-table-to-markdown-chrome-extension?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-html&#0045;table&#0045;to&#0045;markdown&#0045;chrome&#0045;extension" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1011023&theme=light&t=1756668996377" alt="HTML&#0032;Table&#0032;to&#0032;Markdown&#0032;Chrome&#0032;Extension - Copy&#0032;HTML&#0032;table&#0032;as&#0032;markdown | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 </div>
 
 ## 🚀 Overview
