@@ -9,17 +9,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Intelligent table filtering to exclude non-data tables from showing copy button
-- Detection and filtering of navigation/pagination tables (e.g., Google search pagination)
-- Recognition of layout tables with `role="presentation"` or `role="none"`
-- Smart heuristics to identify and skip pagination elements
-- Feedback button in popup that creates pre-filled GitHub issue for bug reports and feature requests
+- **Intelligent table filtering** to exclude non-data tables from showing copy button
+  - Detection and filtering of navigation/pagination tables (e.g., Google search pagination)
+  - Recognition of layout tables with `role="presentation"` or `role="none"`
+  - Smart heuristics to identify and skip pagination elements based on link patterns and table structure
+  - Filters single-row tables with mostly pagination links
+- **Feedback button** in extension popup
+  - Opens GitHub issue creation page with pre-filled template
+  - Automatically includes environment information (extension version, browser, OS)
+  - Structured template with sections for description, reproduction steps, expected/actual behavior
+
+### Changed
+
+- Re-added `tabs` permission to manifest for GitHub issue creation functionality
+- Updated popup version display to v1.0.3
 
 ### Improved
 
 - Better user experience by only showing copy button on actual data tables
 - Reduced visual clutter on pages with many layout tables
-- Enhanced popup UI with better button layout and styling
+- Enhanced popup UI with two-button footer layout (GitHub repository and Feedback)
+- Better button styling with hover effects and consistent spacing
 
 ## [1.0.2] - 2025-08-29
 
